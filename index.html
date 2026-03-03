@@ -1,4 +1,14 @@
-<html class="js backgroundsize borderimage csstransitions fontface svg" dir="ltr">
+<!-- 1.	Add a descriptive page title,
+2.	Add page regions / aria-landmarks with unique labels,
+3.	Identify the page language, 
+4.	Improve the accessibility of the twitter SVG icon in the footer.
+Tool to practice: Use the screen reader to confirm page regions are all identified as expected. 
+
+losing marks:
+•	Bad practice of not giving a unique label in question 1 for page regions that have many instances; more than one <nav> etc.
+-->
+<!-- added language definition to english-->
+<html  lang="en" class="js backgroundsize borderimage csstransitions fontface svg" dir="ltr">
 <head>
 	<title>Untitled</title>
 	<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_1_0/wet-boew/js/i18n/en.min.js"></script>
@@ -28,7 +38,7 @@
 <body>
 
 	</div>
-	<div> <!-- start of header-->
+	<div role="banner" aria-label="heading banner"> <!-- start of header added role (as if using html4)and aria -->
 
 				<div class="app-bar">
 			<div class="container">
@@ -45,7 +55,7 @@
 		<div id="wb-sm" data-ajax-replace="../ajax/cdtsMenu-en.html" data-trgt="mb-pnl"
 			class="wb-menu visible-md visible-lg wb-init wb-data-ajax-replace-inited wb-menu-inited wb-navcurr-inited"
 			typeof="SiteNavigationElement">
-			<div class="pnl-strt container nvbar">
+			<div class="pnl-strt container nvbar" role="navigation" aria-label="main navigation"> <!-- added role & aria label-->
 				<h2>Topics menu</h2>
 				<div class="row">
 					<ul role="menubar" class="list-inline menu">
@@ -65,10 +75,9 @@
 
 
 		</div> <!-- end of main navigation-->
-
 	</div> <!-- end of header-->
 
-	<main property="mainContentOfPage" class="container">
+	<main property="mainContentOfPage" class="container" role="main">
 		<h1>Welcome</h1>
 		<p>Content A here</p>
 		<div class="row">
@@ -105,7 +114,8 @@
 
 
 	</main>
-	<div id="wb-info" class=" wb-navcurr-inited">
+	<div id="wb-info" class=" wb-navcurr-inited" role="contentinfo"> <!--added role-->
+		
 		<div class="gc-sub-footer">
 			<div class="container d-flex align-items-center">
 				<div>
